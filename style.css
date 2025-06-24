@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.booking, .summary {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.booking {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+
+.booking h2 {
+  grid-column: span 2;
+}
+
+.booking input,
+.booking select,
+.booking label {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.range-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  grid-column: span 2;
+}
+
+.booking input[type="checkbox"] {
+  width: auto;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: -8px;
+}
+
+button {
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 12px;
+  font-weight: bold;
+  width: 100%;
+}
+
+#summaryBox {
+  background: #e0e0e0;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* ✅ Responsive layout for small screens */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+  }
+
+  .booking {
+    grid-template-columns: 1fr;
+  }
+
+  .range-group {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shuttle Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <form id="bookingForm" action="sendmail.php" method="POST">
+    <div class="form-container">
+      <div class="booking">
+        <h2>Booking</h2>
+
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Your Phone ex: +33 633308983" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+
+        <select id="pickup" name="pickup" required></select>
+        <select id="drop" name="drop" required></select>
+
+        <div class="range-group">
+          <label for="passengers">Passengers: <span id="passengerCount">1</span></label>
+          <input type="range" name="passengers" id="passengers" min="1" max="8" value="1" />
+        </div>
+
+        <div class="range-group">
+          <label for="luggages">Luggages: <span id="luggageCount">0</span></label>
+          <input type="range" name="luggages" id="luggages" min="0" max="8" value="0" />
+        </div>
+
+        <input type="date" name="date" required />
+        <input type="time" name="time" required />
+
+        <label>
+          <input type="checkbox" name="return" id="return" /> Book Return Transfer
+        </label>
+
+        <!-- ✅ Message Textarea -->
+        <textarea name="message" rows="4" placeholder="Message to driver (optional)" style="grid-column: span 2; padding: 10px;"></textarea>
+      </div>
+
+      <div class="summary">
+        <h2>Total Summary</h2>
+        <div id="summaryBox"></div>
+        <button type="submit">CONFIRM BOOKING</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const priceTable = {
+      "DISNEY-CDG": [80, 100, 110],
+      "DISNEY-ORLY": [80, 100, 110],
+      "DISNEY-PARIS": [90, 110, 120],
+      "DISNEY-BEAUVAIS": [155, 170, 180],
+      "PARIS-CDG": [80, 100, 110],
+      "PARIS-ORLY": [80, 100, 110],
+      "PARIS-DISNEY": [90, 110, 120],
+      "PARIS-BEAUVAIS": [165, 180, 190],
+      "PARIS-GARS": [55, 70, 75],
+      "PARIS-VERSAILLES": [75, 90, 90],
+      "CDG-PARIS": [65, 70, 80],
+      "CDG-ORLY": [80, 85, 90],
+      "CDG-DISNEY": [65, 70, 80],
+      "CDG-La Défense": [60, 65, 70],
+      "ORLY-PARIS": [65, 70, 80],
+      "ORLY-DISNEY": [70, 80, 90],
+      "BEAUVAIS-PARIS": [120, 130, 140],
+      "BEAUVAIS-DISNEY": [125, 135, 145],
+      "VERSAILLES-PARIS": [65, 65, 75]
+    };
+  </script>
+  <script src="script.js?v=5"></script>
+</body>
+</html>
